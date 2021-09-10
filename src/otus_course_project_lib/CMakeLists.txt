@@ -15,7 +15,11 @@ endif ()
 include_directories(${otus_course_project_lib_SOURCE_DIR}/include)
 
 set(SOURCE_FILES
-	
+		include/otus_course_project_lib/interfaces/i_packet.hpp
+		
+		include/otus_course_project_lib/processors/packet_processor.hpp
+		
+		src/processors/packet_processor.cpp
 	)
 
 source_group(TREE ${PROJECT_SOURCE_DIR} FILES ${SOURCE_FILES})
