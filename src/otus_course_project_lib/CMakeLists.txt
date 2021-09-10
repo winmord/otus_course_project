@@ -16,6 +16,7 @@ include_directories(${otus_course_project_lib_SOURCE_DIR}/include)
 
 set(SOURCE_FILES
 		include/otus_course_project_lib/interfaces/i_packet.hpp
+		include/otus_course_project_lib/interfaces/i_state.hpp
 		
 		include/otus_course_project_lib/processors/packet_processor.hpp
 		

@@ -2,13 +2,13 @@
 
 namespace packet_analyzer
 {
-	packet_processor::packet_processor(std::shared_ptr<spsc_packet_queue> packet_queue)
-		: packet_queue_(std::move(packet_queue))
+	packet_processor::packet_processor(std::shared_ptr<std::shared_ptr<i_state>> state,
+	                                   std::shared_ptr<spsc_packet_queue> packet_queue)
+		: state_(std::move(state)), packet_queue_(std::move(packet_queue))
 	{
 	}
 
 	void packet_processor::start()
 	{
-
 	}
 }
