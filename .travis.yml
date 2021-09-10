@@ -1,0 +1,24 @@
+dist: xenial
+language: cpp
+compiler: 
+- clang
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - python3
+      - python3-pip
+      - gcc-9
+      - g++-9
+install:
+- sudo apt-get install python3-setuptools
+- sudo pip3 install conan --upgrade
+- sudo pip3 install conan_package_tools
+- conan user
+script:
+- conan install .
+- cmake .
+- make
+- ctest -C Debug
+- ctest -C Release
