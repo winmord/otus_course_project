@@ -1,6 +1,7 @@
 [requires]
 catch2/2.13.6
 fakeit/2.0.8
+boost/1.74.0
 
 [generators]
 cmake
