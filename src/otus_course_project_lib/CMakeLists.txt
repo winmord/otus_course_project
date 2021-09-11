@@ -20,10 +20,16 @@ set(SOURCE_FILES
 		include/otus_course_project_lib/interfaces/i_state.hpp
 
 		include/otus_course_project_lib/handlers/abstract_handler.hpp
+		include/otus_course_project_lib/handlers/ipv4_packet_handler.hpp
+		include/otus_course_project_lib/handlers/ipv6_packet_handler.hpp
+		include/otus_course_project_lib/handlers/stop_packet_handler.hpp
 
 		include/otus_course_project_lib/processors/packet_processor.hpp
 
 		src/handlers/abstract_handler.cpp
+		src/handlers/ipv4_packet_handler.cpp
+		src/handlers/ipv6_packet_handler.cpp
+		src/handlers/stop_packet_handler.cpp
 		
 		src/processors/packet_processor.cpp
 	)
