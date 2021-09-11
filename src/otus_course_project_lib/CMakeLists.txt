@@ -29,6 +29,8 @@ set(SOURCE_FILES
 
 		include/otus_course_project_lib/processors/packet_processor.hpp
 
+		include/otus_course_project_lib/states/handle_state.hpp
+
 		src/handlers/abstract_handler.cpp
 		src/handlers/ipv4_packet_handler.cpp
 		src/handlers/ipv6_packet_handler.cpp
@@ -37,6 +39,8 @@ set(SOURCE_FILES
 		src/packets/stop_packet.cpp
 
 		src/processors/packet_processor.cpp
+
+		src/states/handle_state.cpp
 	)
 
 source_group(TREE ${PROJECT_SOURCE_DIR} FILES ${SOURCE_FILES})
