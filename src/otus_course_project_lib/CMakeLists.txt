@@ -24,6 +24,8 @@ set(SOURCE_FILES
 		include/otus_course_project_lib/handlers/ipv6_packet_handler.hpp
 		include/otus_course_project_lib/handlers/stop_packet_handler.hpp
 
+		include/otus_course_project_lib/packets/control_packet_ids.hpp
+
 		include/otus_course_project_lib/processors/packet_processor.hpp
 
 		src/handlers/abstract_handler.cpp

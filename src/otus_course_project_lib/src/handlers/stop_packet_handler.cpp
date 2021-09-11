@@ -1,5 +1,7 @@
 #include "otus_course_project_lib/handlers/stop_packet_handler.hpp"
 
+#include "otus_course_project_lib/packets/control_packet_ids.hpp"
+
 namespace packet_analyzer
 {
 	stop_packet_handler::stop_packet_handler(std::shared_ptr<std::shared_ptr<i_state>> state)
@@ -21,6 +23,6 @@ namespace packet_analyzer
 
 	bool stop_packet_handler::is_stop_packet(std::shared_ptr<i_packet> const& packet)
 	{
-		return packet->get_id() == -1;
+		return packet->get_id() == static_cast<int>(control_packet_ids::stop_packet_id);
 	}
 }
