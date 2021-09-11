@@ -54,12 +54,13 @@ TEST_CASE("stop packet processor test")
 	});
 
 	const auto packet_queue = std::make_shared<boost::lockfree::spsc_queue<std::shared_ptr<i_packet>>>(10);
-	const auto ipv4_handler = std::make_shared<ipv4_packet_handler>();
-	auto state = std::make_shared<handle_state>(packet_queue, ipv4_handler);
+	const auto abs_handler = std::make_shared<abstract_handler>();
+	auto state = std::make_shared<handle_state>(packet_queue, abs_handler);
 	const auto pointer_to_state = std::make_shared<std::shared_ptr<i_state>>(state);
+	const auto ipv4_handler = std::make_shared<ipv4_packet_handler>();
 	const auto stop_handler = std::make_shared<stop_packet_handler>(pointer_to_state);
 
-	ipv4_handler->set_next(stop_handler);
+	abs_handler->set_next(ipv4_handler)->set_next(stop_handler);
 
 	const packet_processor p_processor(pointer_to_state, packet_queue);
 
@@ -71,6 +72,6 @@ TEST_CASE("stop packet processor test")
 	packet_queue->push(pointer_to_packet);
 
 	wait_packet_processor_finish(p_processor);
-	
+
 	REQUIRE_FALSE(packet_queue->empty());
 }
