@@ -18,6 +18,8 @@ namespace packet_analyzer
 		explicit packet_processor(std::shared_ptr<std::shared_ptr<i_state>> state,
 		                          std::shared_ptr<spsc_packet_queue> packet_queue);
 
+		bool is_started() const;
+		
 		~packet_processor();
 	
 	private:

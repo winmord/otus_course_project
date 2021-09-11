@@ -18,9 +18,16 @@ namespace packet_analyzer
 
 	bool ipv4_packet_handler::is_ipv4_packet(std::shared_ptr<i_packet> const& packet)
 	{
-		const auto packet_bytes = packet->get_bytes();
-		const auto first_byte = *packet_bytes.begin();
+		try
+		{
+			const auto packet_bytes = packet->get_bytes();
+			const auto first_byte = *packet_bytes.begin();
 
-		return ((first_byte >> 4) == 4) && ((first_byte & 0x0f) >= 5);
+			return ((first_byte >> 4) == 4) && ((first_byte & 0x0f) >= 5);
+		}
+		catch(...)
+		{
+			return false;
+		}
 	}
 }

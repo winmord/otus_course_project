@@ -9,6 +9,11 @@ namespace packet_analyzer
 		this->start();
 	}
 
+	bool packet_processor::is_started() const
+	{
+		return this->is_started_;
+	}
+
 	packet_processor::~packet_processor()
 	{
 		this->stop();
