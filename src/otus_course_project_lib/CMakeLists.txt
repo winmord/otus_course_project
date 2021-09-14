@@ -22,25 +22,33 @@ set(SOURCE_FILES
 		include/otus_course_project_lib/handlers/abstract_handler.hpp
 		include/otus_course_project_lib/handlers/ipv4_packet_handler.hpp
 		include/otus_course_project_lib/handlers/ipv6_packet_handler.hpp
+		include/otus_course_project_lib/handlers/pause_packet_handler.hpp
+		include/otus_course_project_lib/handlers/save_packet_handler.hpp
 		include/otus_course_project_lib/handlers/stop_packet_handler.hpp
 
 		include/otus_course_project_lib/packets/control_packet_ids.hpp
+		include/otus_course_project_lib/packets/pause_packet.hpp
 		include/otus_course_project_lib/packets/stop_packet.hpp
 
 		include/otus_course_project_lib/processors/packet_processor.hpp
 
 		include/otus_course_project_lib/states/handle_state.hpp
+		include/otus_course_project_lib/states/pause_state.hpp
 
 		src/handlers/abstract_handler.cpp
 		src/handlers/ipv4_packet_handler.cpp
 		src/handlers/ipv6_packet_handler.cpp
+		src/handlers/pause_packet_handler.cpp
+		src/handlers/save_packet_handler.cpp
 		src/handlers/stop_packet_handler.cpp
 		
+		src/packets/pause_packet.cpp
 		src/packets/stop_packet.cpp
 
 		src/processors/packet_processor.cpp
 
 		src/states/handle_state.cpp
+		src/states/pause_state.cpp
 	)
 
 source_group(TREE ${PROJECT_SOURCE_DIR} FILES ${SOURCE_FILES})
