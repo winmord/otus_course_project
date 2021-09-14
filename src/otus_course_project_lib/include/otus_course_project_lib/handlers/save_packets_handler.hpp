@@ -9,10 +9,10 @@ namespace packet_analyzer
 {
 	using spsc_packet_queue = boost::lockfree::spsc_queue<std::shared_ptr<i_packet>>;
 	
-	class save_packet_handler : public abstract_handler
+	class save_packets_handler : public abstract_handler
 	{
 	public:
-		save_packet_handler(std::shared_ptr<spsc_packet_queue> packet_queue);
+		save_packets_handler(std::shared_ptr<spsc_packet_queue> packet_queue);
 		
 		void handle(const std::shared_ptr<i_packet> packet) override;
 

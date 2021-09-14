@@ -23,7 +23,7 @@ set(SOURCE_FILES
 		include/otus_course_project_lib/handlers/ipv4_packet_handler.hpp
 		include/otus_course_project_lib/handlers/ipv6_packet_handler.hpp
 		include/otus_course_project_lib/handlers/pause_packet_handler.hpp
-		include/otus_course_project_lib/handlers/save_packet_handler.hpp
+		include/otus_course_project_lib/handlers/save_packets_handler.hpp
 		include/otus_course_project_lib/handlers/stop_packet_handler.hpp
 
 		include/otus_course_project_lib/packets/control_packet_ids.hpp
@@ -39,7 +39,7 @@ set(SOURCE_FILES
 		src/handlers/ipv4_packet_handler.cpp
 		src/handlers/ipv6_packet_handler.cpp
 		src/handlers/pause_packet_handler.cpp
-		src/handlers/save_packet_handler.cpp
+		src/handlers/save_packets_handler.cpp
 		src/handlers/stop_packet_handler.cpp
 		
 		src/packets/pause_packet.cpp
