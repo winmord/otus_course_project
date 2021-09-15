@@ -13,7 +13,7 @@ namespace packet_analyzer
 	{
 	public:
 		continue_packet_handler(std::shared_ptr<std::shared_ptr<i_state>> state,
-		                        std::shared_ptr<spsc_packet_queue> packet_queue);
+		                        std::shared_ptr<i_state> previous_state);
 
 		void handle(const std::shared_ptr<i_packet> packet) override;
 
@@ -21,6 +21,6 @@ namespace packet_analyzer
 		static bool is_continue_packet(std::shared_ptr<i_packet> const& packet);
 
 		std::shared_ptr<std::shared_ptr<i_state>> state_;
-		std::shared_ptr<spsc_packet_queue> packet_queue_;
+		std::shared_ptr<i_state> previous_state_;
 	};
 }

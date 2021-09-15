@@ -3,7 +3,6 @@
 #include <boost/lockfree/spsc_queue.hpp>
 
 #include "otus_course_project_lib/handlers/abstract_handler.hpp"
-#include "otus_course_project_lib/interfaces/i_state.hpp"
 
 namespace packet_analyzer
 {

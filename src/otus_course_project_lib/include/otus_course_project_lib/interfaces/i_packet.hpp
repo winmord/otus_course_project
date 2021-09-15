@@ -9,7 +9,7 @@ namespace packet_analyzer
 	{
 	public:
 		virtual ~i_packet() = default;
-		virtual std::vector<uint8_t> get_bytes() = 0;
+		virtual std::vector<uint8_t> get_bytes() const = 0;
 		virtual int get_id() = 0;
 	};
 }

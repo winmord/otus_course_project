@@ -1,7 +1,5 @@
 #include "otus_course_project_lib/handlers/save_packets_handler.hpp"
 
-#include "otus_course_project_lib/packets/control_packet_ids.hpp"
-
 namespace packet_analyzer
 {
 	save_packets_handler::save_packets_handler(std::shared_ptr<spsc_packet_queue> packet_queue)
@@ -11,7 +9,7 @@ namespace packet_analyzer
 
 	void save_packets_handler::handle(const std::shared_ptr<i_packet> packet)
 	{
-		if(is_control_packet(packet))
+		if (is_control_packet(packet))
 		{
 			abstract_handler::handle(packet);
 		}

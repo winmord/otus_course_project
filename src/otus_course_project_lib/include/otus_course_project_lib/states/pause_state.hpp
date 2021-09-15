@@ -13,15 +13,18 @@ namespace packet_analyzer
 	class pause_state : public i_state
 	{
 	public:
-		explicit pause_state(std::shared_ptr<std::shared_ptr<i_state>> previous_state,
+		explicit pause_state(std::shared_ptr<std::shared_ptr<i_state>> state, 
+							 std::shared_ptr<i_state> previous_state,
 		                     std::shared_ptr<spsc_packet_queue> packet_queue);
 
 		void to() override;
 
 	private:
-		std::shared_ptr<std::shared_ptr<i_state>> previous_state_;
+		void setup_handlers();
+		
+		std::shared_ptr<std::shared_ptr<i_state>> state_;
+		std::shared_ptr<i_state> previous_state_;
 		std::shared_ptr<spsc_packet_queue> packet_queue_;
-		std::shared_ptr<spsc_packet_queue> pause_packet_queue_;
 		std::shared_ptr<i_handler> handler_;
 	};
 }

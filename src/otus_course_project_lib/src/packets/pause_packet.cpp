@@ -6,13 +6,13 @@
 
 namespace packet_analyzer
 {
-	std::vector<uint8_t> pause_packet::get_bytes()
+	std::vector<uint8_t> pause_packet::get_bytes() const
 	{
 		throw std::runtime_error("This is pause packet");
 	}
 
 	int pause_packet::get_id()
 	{
-		return static_cast<int>(control_packet_ids::stop_packet_id);
+		return static_cast<int>(control_packet_ids::pause_packet_id);
 	}
 }

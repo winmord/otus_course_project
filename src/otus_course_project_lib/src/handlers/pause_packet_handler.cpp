@@ -15,7 +15,9 @@ namespace packet_analyzer
 	{
 		if (is_pause_packet(packet))
 		{
-			*this->state_ = std::make_shared<pause_state>(this->state_, this->packet_queue_);
+			*this->state_ = std::make_shared<pause_state>(this->state_,
+			                                              *this->state_,
+			                                              this->packet_queue_);
 		}
 		else
 		{

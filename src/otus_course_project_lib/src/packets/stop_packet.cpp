@@ -6,7 +6,7 @@
 
 namespace packet_analyzer
 {
-	std::vector<uint8_t> stop_packet::get_bytes()
+	std::vector<uint8_t> stop_packet::get_bytes() const
 	{
 		throw std::runtime_error("This is stop packet");
 	}
