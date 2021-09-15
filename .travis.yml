@@ -15,7 +15,7 @@ install:
 - sudo apt-get install python3-setuptools
 - sudo pip3 install conan --upgrade
 - sudo pip3 install conan_package_tools
-- conan user usr
+- conan user
 script:
 - conan install .
 - cmake .
