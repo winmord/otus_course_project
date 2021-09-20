@@ -1,5 +1,7 @@
+os: linux
+language: python
+python: "3.7"
 dist: xenial
-language: cpp
 compiler: 
 - clang
 addons:
@@ -7,18 +9,16 @@ addons:
     sources:
       - ubuntu-toolchain-r-test
     packages:
-      - python3
-      - python3-pip
       - gcc-9
       - g++-9
 install:
-- sudo apt-get install python3-setuptools
-- sudo pip3 install conan --upgrade
-- sudo pip3 install conan_package_tools
+- pip install conan
 - conan user
 script:
+- export CC=gcc-9
+- export CXX=g++-9
 - conan install .
-- cmake .
+- cmake . -G "Unix Makefiles"
 - make
 - ctest -C Debug
 - ctest -C Release
