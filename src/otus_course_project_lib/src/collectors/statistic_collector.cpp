@@ -18,7 +18,7 @@ namespace packet_analyzer
 	{
 		const auto lb = this->statistic_.lower_bound(key);
 
-		if (lb != this->statistic_.end())
+		if (lb != this->statistic_.end() && lb->first == key)
 		{
 			lb->second.emplace_back(value);
 		}
