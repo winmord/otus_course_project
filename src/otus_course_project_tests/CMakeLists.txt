@@ -13,6 +13,8 @@ include_directories(${otus_course_project_lib_SOURCE_DIR}/include)
 
 set(SOURCE_FILES
 	src/main.cpp
+
+	src/packet_processor_tests.cpp
    )
 	
 source_group(TREE ${PROJECT_SOURCE_DIR} FILES ${SOURCE_FILES})
